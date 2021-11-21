@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Communication Application</title>
+    <meta name="viewport" content="width&#x3D;device-width,&#x20;initial-scale&#x3D;1.0">
+    <!-- Le styles -->
+    <link href="&#x2F;js&#x2F;jquery-ui-1.12.1&#x2F;jquery-ui.theme.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+    <link href="&#x2F;js&#x2F;jquery-ui-1.12.1&#x2F;jquery-ui.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+    <link href="&#x2F;js&#x2F;bootstrap-5.0.0&#x2F;css&#x2F;bootstrap.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+    <link href="&#x2F;css&#x2F;zf2-style.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+    <link href="&#x2F;img&#x2F;favicon.ico" rel="shortcut&#x20;icon" type="image&#x2F;vnd.microsoft.icon">
+    <!-- Scripts -->
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;jquery-ui-1.12.1&#x2F;external&#x2F;jquery&#x2F;jquery.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;jquery-ui-1.12.1&#x2F;jquery-ui.min.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;bootstrap-5.0.0&#x2F;js&#x2F;bootstrap.min.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;helpers&#x2F;zf2-console.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;functions&#x2F;zf2-functions.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;zf2-main.js"></script>
+    <!-- Override Styles -->
+
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img src="/img/zf-logo-mark.svg" height="28"
+                     alt="Zend Framework 1.1.1dev"/>&nbsp;
+                Communication Application                    </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">
+                        Application                            </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/admin/store">
+                        Store                            </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/admin">
+                        Admin                            </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <h3>Users</h3>
+    <br>
+    <a href="/admin/user-manager/new">&raquo; Add User</a>
+    <hr />
+    <a href="/admin/upload-manager">
+        <h3>&raquo; Upload manager</h3>
+    </a>
+    <table class="table">
+        <tr>
+            <th>id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th style="width: 170px">Birthday</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th style="width: 170px">Created</th>
+            <th style="width: 170px">Updated</th>
+            <th>&nbsp;</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>admin</td>
+            <td>admin@mail.ru</td>
+            <td>2021-09-23</td>
+            <td>46456-8989</td>
+            <td>Kiev</td>
+            <td>By default</td>
+            <td>1</td>
+            <td>2021-10-03 01:12:11</td>
+            <td>2021-10-03 01:12:12</td>
+            <td>
+                <a href="/admin/user-manager/edit/1">
+                    Edit</a>
+                |
+                <a href="/admin/user-manager/delete/1"
+                   onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>admin6</td>
+            <td>admin6@mail.ru</td>
+            <td>1999-03-26</td>
+            <td>+380987776655</td>
+            <td>Sumy</td>
+            <td>Using this feature</td>
+            <td>4</td>
+            <td>2021-06-07 19:24:18</td>
+            <td>2021-06-07 19:25:19</td>
+            <td>
+                <a href="/admin/user-manager/edit/2">
+                    Edit</a>
+                |
+                <a href="/admin/user-manager/delete/2"
+                   onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Sim Turner</td>
+            <td>labadie.terrence@hotmail.com</td>
+            <td>1980-08-14</td>
+            <td>997-477-2528</td>
+            <td>26647 Harold StreetsPort Karina, CO 80283</td>
+            <td>Aliquam quia voluptatem enim. Ipsam velit quasi maxime quis nesciunt sequi repellendus. Et nihil id nostrum vero. Voluptas est ab molestiae.</td>
+            <td>4</td>
+            <td>2021-06-07 20:56:27</td>
+            <td></td>
+            <td>
+                <a href="/admin/user-manager/edit/3">
+                    Edit</a>
+                |
+                <a href="/admin/user-manager/delete/3"
+                   onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+        </tr>
+    </table>            <hr>
+    <footer>
+        <p>&copy; 2005 - 2012 by Zend Technologies Ltd. All rights reserved.</p>
+    </footer>
+</div> <!-- /container -->
+</body>
+</html>

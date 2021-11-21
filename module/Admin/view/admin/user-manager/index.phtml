@@ -1,0 +1,43 @@
+<h3><?php echo $this->translate('Users') ?></h3>
+<br>
+<a href="<?php echo $this->url('admin/user-manager', ['action' => 'new']);?>">&raquo; <?php echo $this->translate('Add User') ?></a>
+<hr />
+<a href="<?php echo $this->url('admin/upload-manager');?>">
+    <h3>&raquo; <?php echo $this->translate('Upload manager') ?></h3>
+</a>
+<table class="table">
+<tr>
+    <th><?php echo $this->translate('id') ?></th>
+    <th><?php echo $this->translate('Name') ?></th>
+    <th><?php echo $this->translate('Email') ?></th>
+    <th style="width: 170px"><?php echo $this->translate('Birthday') ?></th>
+    <th><?php echo $this->translate('Phone') ?></th>
+    <th><?php echo $this->translate('Address') ?></th>
+    <th><?php echo $this->translate('Description') ?></th>
+    <th><?php echo $this->translate('Type') ?></th>
+    <th style="width: 170px"><?php echo $this->translate('Created') ?></th>
+    <th style="width: 170px"><?php echo $this->translate('Updated') ?></th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach ($users as $user) : ?>
+<tr>
+    <td><?php echo $this->escapeHtml($user->id);?></td>
+    <td><?php echo $this->escapeHtml($user->name);?></td>
+    <td><?php echo $this->escapeHtml($user->email);?></td>
+    <td><?php echo $this->escapeHtml($user->birthday);?></td>
+    <td><?php echo $this->escapeHtml($user->phone);?></td>
+    <td><?php echo $this->escapeHtml($user->address);?></td>
+    <td><?php echo $this->escapeHtml($user->description);?></td>
+    <td><?php echo $this->escapeHtml($user->type);?></td>
+    <td><?php echo $this->escapeHtml($user->created);?></td>
+    <td><?php echo $this->escapeHtml($user->updated);?></td>
+    <td>
+        <a href="<?php echo $this->url('admin/user-manager', ['action' => 'edit', 'id' => $user->id]);?>">
+            <?php echo $this->translate('Edit') ?></a>
+        |
+        <a href="<?php echo $this->url('admin/user-manager', ['action' => 'delete', 'id' => $user->id]);?>"
+           onclick="return confirm('Are you sure?')"><?php echo $this->translate('Delete') ?></a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>

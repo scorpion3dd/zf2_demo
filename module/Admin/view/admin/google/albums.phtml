@@ -1,0 +1,38 @@
+<h3><?php echo $this->translate('Albums photo') ?></h3>
+<br>
+<a href="<?php echo $this->url('admin/google', ['action' => 'new-album']);?>">
+    &raquo; <?php echo $this->translate('Add Album') ?>
+</a>
+<table class="table">
+<tr>
+    <th style="width: 100px"><?php echo $this->translate('id') ?></th>
+    <th style="width: 150px"><?php echo $this->translate('title') ?></th>
+    <th><?php echo $this->translate('image') ?></th>
+    <th><?php echo $this->translate('view albom') ?></th>
+    <th><?php echo $this->translate('albom in google') ?></th>
+</tr>
+<?php foreach ($albums as $album) : ?>
+<tr>
+    <td>
+        <?php echo $this->escapeHtml($album['id']);?>
+    </td>
+    <td>
+        <?php echo $this->escapeHtml($album['title']);?>
+    </td>
+    <td>
+        <img src="<?php echo $this->escapeHtml($album['photo_base_url'])?>" height="100px"
+             alt="<?php echo $this->escapeHtml($album['title']);?>"/>
+    </td>
+    <td>
+        <a href="<?php echo $this->url('admin/google', ['action' => 'photos', 'albumId' => $album['id']]) ?>" target="_blank">
+            <?php echo $this->translate('photos in album') ?>
+        </a>
+    </td>
+    <td>
+        <a href="<?php echo $this->escapeHtml($album['product_url']);?>" target="_blank">
+            <?php echo $this->translate('go to album') ?>
+        </a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>

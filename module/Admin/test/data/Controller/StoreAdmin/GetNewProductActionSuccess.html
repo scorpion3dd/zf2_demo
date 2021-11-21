@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Communication Application</title>
+    <meta name="viewport" content="width&#x3D;device-width,&#x20;initial-scale&#x3D;1.0">
+    <!-- Le styles -->
+    <link href="&#x2F;js&#x2F;jquery-ui-1.12.1&#x2F;jquery-ui.theme.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+    <link href="&#x2F;js&#x2F;jquery-ui-1.12.1&#x2F;jquery-ui.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+    <link href="&#x2F;js&#x2F;bootstrap-5.0.0&#x2F;css&#x2F;bootstrap.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+    <link href="&#x2F;css&#x2F;zf2-style.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+    <link href="&#x2F;img&#x2F;favicon.ico" rel="shortcut&#x20;icon" type="image&#x2F;vnd.microsoft.icon">
+    <!-- Scripts -->
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;jquery-ui-1.12.1&#x2F;external&#x2F;jquery&#x2F;jquery.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;jquery-ui-1.12.1&#x2F;jquery-ui.min.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;bootstrap-5.0.0&#x2F;js&#x2F;bootstrap.min.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;helpers&#x2F;zf2-console.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;functions&#x2F;zf2-functions.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;zf2-main.js"></script>
+    <!-- Override Styles -->
+
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img src="/img/zf-logo-mark.svg" height="28"
+                     alt="Zend Framework 1.1.1dev"/>&nbsp;
+                Communication Application                    </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">
+                        Application                            </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/admin/store">
+                        Store                            </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/admin">
+                        Admin                            </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <a href="/admin/store-admin">
+        View Products</a> |
+    <a href="/admin/store-admin/listOrders">
+        View Orders</a>
+    <hr />
+    <h3>New product</h3>
+    <form method="post" name="ProductForm" id="ProductForm"><div class="mb-3 row">    <label class="col-sm-2 col-form-label"><label for="id"> </label></label>    <div class="col-sm-10"><input name="id" class="form-control" type="hidden" id="id" value="">    </div>    <div></div></div><div class="mb-3 row">    <label class="col-sm-2 col-form-label"><label for="name">Title</label></label>    <div class="col-sm-10"><input name="name" class="form-control" type="text" id="name" required="required" value="">    </div>    <div></div></div><div class="mb-3 row">    <label class="col-sm-2 col-form-label"><label for="desc">Description</label></label>    <div class="col-sm-10"><textarea name="desc" class="form-control" id="desc" required="required"></textarea>    </div>    <div></div></div><div class="mb-3 row">    <label class="col-sm-2 col-form-label"><label for="cost">Cost</label></label>    <div class="col-sm-10"><input name="cost" class="form-control" type="number" min="1" id="cost" required="required" value="1">    </div>    <div></div></div><div class="mb-3 row">    <label class="col-sm-2 col-form-label"><label for="submit"> </label></label>    <div class="col-sm-10"><input name="submit" class="ui-button" type="submit" value="Save">    </div>    <div></div></div></form>            <hr>
+    <footer>
+        <p>&copy; 2005 - 2012 by Zend Technologies Ltd. All rights reserved.</p>
+    </footer>
+</div> <!-- /container -->
+</body>
+</html>

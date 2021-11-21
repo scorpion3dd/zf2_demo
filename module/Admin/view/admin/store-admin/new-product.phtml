@@ -1,0 +1,21 @@
+<a href="<?php echo $this->url('admin/store-admin');?>">
+    <?php echo $this->translate('View Products') ?>
+</a> |
+<a href="<?php echo $this->url('admin/store-admin', ['action' => 'listOrders']);?>">
+    <?php echo $this->translate('View Orders') ?>
+</a>
+<hr />
+<h3><?php echo $this->translate('New product') ?></h3>
+<?php
+echo $this->form()->openTag($form);
+foreach ($form as $element) {
+    echo '<div class="mb-3 row">';
+    echo '    <label class="col-sm-2 col-form-label">'.$this->formLabel($element).'</label>';
+    echo '    <div class="col-sm-10">';
+    echo $this->formElement($element);
+    echo '    </div>';
+    echo '    <div>'.$this->formElementErrors($element).'</div>';
+    echo '</div>';
+}
+echo $this->form()->closeTag();
+?>

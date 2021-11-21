@@ -1,0 +1,14 @@
+{
+  "id":1,
+  "name":"admin",
+  "email":"admin@mail.ru",
+  "birthday":"2021-09-23",
+  "phone":"46456-8989",
+  "address":"Kiev",
+  "description":"By default",
+  "type":1,
+  "password":"21232f297a57a5a743894a0e4a801fc3",
+  "confirmPassword":"",
+  "created":"2021-10-03 01:12:11",
+  "updated":"2021-10-03 01:12:12"
+}

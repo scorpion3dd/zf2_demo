@@ -1,0 +1,75 @@
+{
+    "name": "zendframework-demo/admin-application-mobile",
+    "description": "Admin Mobile Application for Zend Framework zend-mvc applications",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "framework",
+        "mvc",
+        "zf"
+    ],
+    "homepage": "http://framework.zend.com/",
+    "require": {
+        "php": "^5.6 || ^7.0",
+        "zendframework/zend-component-installer": "^1.0 || ^2.1",
+        "zendframework/zendframework": "*",
+        "zendframework/zend-mvc": "^3.1.1",
+        "zfcampus/zf-development-mode": "^3.2",
+        "squizlabs/php_codesniffer": "*",
+        "phpmd/phpmd": "^2.9",
+        "ext-json": "*",
+        "ext-pdo": "*",
+        "zendframework/zend-http": "^2.11",
+        "webino/thumbnailer": "dev-develop",
+        "webino/webino-image-thumb": "dev-develop",
+        "zendframework/zend-json": "3.0",
+        "google/apiclient": "^2.9",
+        "zendframework/zend-stdlib": "^3.2",
+        "google/photos-library": "^1.6",
+        "fzaninotto/faker": "^1.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Application\\": "module/Application/src/",
+            "Admin\\": "module/Admin/src/",
+            "Mobile\\": "module/Mobile/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ApplicationTest\\": "module/Application/test/",
+            "AdminTest\\": "module/Admin/test/",
+            "MobileTest\\": "module/Mobile/test/"
+        }
+    },
+    "scripts": {
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "stan-check": "phpstan analyse --level=7 --memory-limit=1024M ./module/Application/src/  ./module/Admin/src/  ./module/Mobile/src/",
+        "phpmd-app": "phpmd module/Application/src/ html phpmd_ruleset.xml --reportfile __tests__/phpmd-app.html --suffixes php,phtml",
+        "phpmd-admin": "phpmd module/Admin/src/ html phpmd_ruleset.xml --reportfile __tests__/phpmd-admin.html --suffixes php,phtml",
+        "phpmd-mobile": "phpmd module/Mobile/src/ html phpmd_ruleset.xml --reportfile __tests__/phpmd-mobile.html --suffixes php,phtml",
+        "development-disable": "zf-development-mode disable",
+        "development-enable": "zf-development-mode enable",
+        "development-status": "zf-development-mode status",
+        "post-create-project-cmd": [
+            "@development-enable",
+            "php bin/update-gitignore.php"
+        ],
+        "serve": "php -S 0.0.0.0:8080 -t public",
+        "test": "phpunit",
+        "test-coverage": "phpunit --coverage-html __tests__/coverage",
+        "run-all": [
+            "composer cs-check",
+            "composer stan-check",
+            "composer test",
+            "composer phpmd-app",
+            "composer phpmd-admin",
+            "composer phpmd-mobile"
+        ]
+    },
+    "require-dev": {
+        "zendframework/zend-test": "^3.3",
+        "phpstan/phpstan": "^0.12.83"
+    }
+}

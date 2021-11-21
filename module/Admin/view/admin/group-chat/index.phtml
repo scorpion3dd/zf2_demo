@@ -1,0 +1,29 @@
+<?php
+ $this->headScript()->appendScript(
+     '$(function() {
+        $( "#btnRefresh" ).click(function( event ) {
+            document.getElementById("messageListFrame").contentWindow.location.reload(true);
+            Zf2Console.consoleLog("btnRefresh click");
+        });
+        function refreshClick(obj) {
+            let btnRefresh = document.getElementById(obj);
+            Zf2Console.consoleLog("btnClick =", obj);
+            btnRefresh.click();
+        }
+        setInterval(refreshClick, 5000, "btnRefresh");
+      });',
+     'text/javascript'
+ );
+    ?>
+<h3>Group Chat</h3>
+<iframe src="<?php echo $this->url('admin/group-chat', ['action' => 'messageList']) ?>"
+        width="900" height="400" id="messageListFrame"></iframe>
+<?php
+echo $this->form()->openTag($form);
+echo '<label id="userName">'. $userName .': </label>';
+foreach ($form as $element) {
+    echo $this->formElement($element);
+    echo $this->formElementErrors($element);
+}
+echo $this->form()->closeTag();
+?>

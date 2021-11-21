@@ -1,0 +1,10 @@
+<section class="register-confirm">
+<h2>Login Sucessfull</h2>
+<p>
+    <a href="<?php echo $this->url('admin/user-manager') ?>"><?php echo $this->translate('Manage Users') ?></a>
+    | <a href="<?php echo $this->url('admin/upload-manager') ?>"><?php echo $this->translate('Manage Documents') ?></a>
+    | <a href="<?php echo $this->url('admin/login', ['action' => 'logout']) ?>"><?php echo $this->translate('Logout') ?></a>
+</p>
+<p> Welcome!  <?php echo $this->user_email; ?> </p>
+</section>
+

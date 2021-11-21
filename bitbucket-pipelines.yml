@@ -1,0 +1,29 @@
+# This is a build configuration for PHP.
+
+image: php:7.4
+
+pipelines:
+  default:
+    - step:
+        name: Init build
+        caches:
+          - composer
+        script:
+          - apt-get update && apt-get install -y unzip git zlib1g-dev libicu-dev g++ libzip-dev libxml2-dev libfreetype6-dev libjpeg62-turbo-dev
+          #- docker-php-ext-configure -j$(nproc) gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/local/include/
+          - docker-php-ext-install -j$(nproc) gd
+          - docker-php-ext-install -j$(nproc) intl
+          - docker-php-ext-install -j$(nproc) xml
+          - docker-php-ext-install -j$(nproc) zip
+#          - docker-php-ext-install -j$(nproc) json
+          - docker-php-ext-install -j$(nproc) calendar
+          #- docker-php-ext-install -j$(nproc) libxml
+          - docker-php-ext-install -j$(nproc) dom
+          - docker-php-ext-install -j$(nproc) pdo
+          - docker-php-ext-install -j$(nproc) pdo_mysql
+          - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --version=1.10.21
+          - composer install
+          - composer cs-check
+          - composer phpmd-app
+          - composer test
+#          - composer stan-check

@@ -1,0 +1,16 @@
+[
+  {
+    "id":2,
+    "name":"admin6",
+    "email":"admin6@mail.ru",
+    "birthday":"1999-03-26",
+    "phone":"+380987776655",
+    "address":"Sumy",
+    "description":"Using this feature",
+    "type":4,
+    "password":"c6b853d6a7cc7ec49172937f68f446c8",
+    "confirmPassword":"",
+    "created":"2021-06-07 19:24:18",
+    "updated":"2021-06-07 19:25:19"
+  }
+]

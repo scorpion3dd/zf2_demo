@@ -1,0 +1,51 @@
+/**
+ * This file is part of the Simple demo web-project with REST Full API for Mobile.
+ *
+ * This project is no longer maintained.
+ * The project is written in Zend Framework 2 Release.
+ *
+ * @link https://github.com/scorpion3dd
+ * @copyright Copyright (c) 2016-2021 Denis Puzik <scorpion3dd@gmail.com>
+ */
+
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.zf-green {
+    color: #68b604;
+}
+
+.btn-success {
+    background-color: #57a900;
+    background-image: -moz-linear-gradient(top, #70d900, #57a900);
+    background-image: -ms-linear-gradient(top, #70d900, #57a900);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900), to(#57a900));
+    background-image: -webkit-linear-gradient(top, #70d900, #57a900);
+    background-image: -o-linear-gradient(top, #70d900, #57a900);
+    background-image: linear-gradient(top, #70d900, #57a900);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900', endColorstr='#57a900', GradientType=0);
+}
+
+.btn-success:hover,
+.btn-success:active,
+.btn-success.active,
+.btn-success.disabled,
+.btn-success[disabled] {
+    background-color: #57a900;
+}
+
+div.container a.navbar-brand > img {
+    display: inline;
+    margin-right: 4px;
+    margin-top: -2px;
+}
+
+#userName {
+    width:100px;
+    margin-top:10px;
+    display: inline;
+    text-transform: uppercase;
+    font-weight: bold;
+}

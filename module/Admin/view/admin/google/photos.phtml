@@ -1,0 +1,41 @@
+<h3><?php echo $this->translate('Photos in album') . " $albumTitle" ?></h3>
+<br>
+<a href="<?php echo $this->url('admin/google', ['action' => 'albums']);?>">
+    &raquo; <?php echo $this->translate('Albums') ?>
+</a>
+<br>
+<br>
+<a href="<?php echo $this->url('admin/google', ['action' => 'upload-photo', 'albumId' => $albumId]);?>">
+    &raquo; <?php echo $this->translate('Upload Photo') ?>
+</a>
+<table class="table">
+<tr>
+    <th style="width: 200px"><?php echo $this->translate('filename') ?></th>
+    <th style="width: 150px"><?php echo $this->translate('date') ?></th>
+    <th style="width: 250px"><?php echo $this->translate('description') ?></th>
+    <th><?php echo $this->translate('image') ?></th>
+    <th><?php echo $this->translate('photo in google') ?></th>
+</tr>
+<?php foreach ($photos as $photo) : ?>
+<tr>
+    <td>
+        <?php echo $this->escapeHtml($photo['filename']);?>
+    </td>
+    <td>
+        <?php echo $this->escapeHtml($photo['date']);?>
+    </td>
+    <td>
+        <?php echo $this->escapeHtml($photo['description']);?>
+    </td>
+    <td>
+        <img src="<?php echo $this->escapeHtml($photo['base_url'])?>" height="100px"
+             alt="<?php echo $this->escapeHtml($photo['filename']);?>"/>
+    </td>
+    <td>
+        <a href="<?php echo $this->escapeHtml($photo['product_url']);?>" target="_blank">
+            <?php echo $this->translate('go to photo') ?>
+        </a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>

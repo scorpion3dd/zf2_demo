@@ -1,0 +1,34 @@
+<?php
+/**
+ * This file is part of the Simple demo web-project with REST Full API for Mobile.
+ *
+ * This project is no longer maintained.
+ * The project is written in Zend Framework 2 Release.
+ *
+ * @link https://github.com/scorpion3dd
+ * @copyright Copyright (c) 2016-2021 Denis Puzik <scorpion3dd@gmail.com>
+ */
+
+/**
+ * Local Configuration Override
+ *
+ * This configuration override file is for overriding environment-specific and
+ * security-sensitive configuration information. Copy this file without the
+ * .dist extension at the end and populate values as needed.
+ *
+ * @NOTE: This file is ignored from Git by default with the .gitignore included
+ * in ZendSkeletonApplication. This is a good practice, as it prevents sensitive
+ * credentials from accidentally being committed into version control.
+ */
+
+return [
+    'db' => [
+        'driver'   => 'pdo_mysql',
+        'dsn'      => 'mysql:dbname=' . 'DB_NAME' . ';host=' . 'DB_HOST',
+        'username' => 'DB_USERNAME',
+        'password' => 'DB_PASSWORD',
+        'driver_options' => [
+            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
+        ],
+    ],
+];

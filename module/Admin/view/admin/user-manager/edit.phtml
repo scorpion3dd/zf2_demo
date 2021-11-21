@@ -1,0 +1,69 @@
+<h3>Edit User Information</h3>
+
+<?php if ($this->error) : ?>
+<p class="error">
+    There were one or more isues with your submission. Please correct them as
+    indicated below.
+</p>
+<?php endif ?>
+<section>
+<?php
+$form = $this->form;
+$form->prepare();
+$form->setAttribute('action', $this->url('admin/user-manager', ['action' => 'process']));
+
+echo $this->form()->openTag($form);
+?>
+<dl class="zend_form">
+    <dt><?php echo $this->formLabel($form->get('name')); ?></dt>
+    <?php echo $this->formElement($form->get('id')); ?>
+
+    <dd><?php
+        echo $this->formElement($form->get('name'));
+        echo $this->formElementErrors($form->get('name'));
+    ?></dd>
+
+    <dt><?php echo $this->formLabel($form->get('email')); ?></dt>
+    <dd><?php
+        echo $this->formElement($form->get('email'));
+        echo $this->formElementErrors($form->get('email'));
+    ?></dd>
+
+    <dt><?php echo $this->formLabel($form->get('birthday')); ?></dt>
+    <dd><?php
+        echo $this->formElement($form->get('birthday'));
+        echo $this->formElementErrors($form->get('birthday'));
+    ?></dd>
+
+    <dt><?php echo $this->formLabel($form->get('phone')); ?></dt>
+    <dd><?php
+        echo $this->formElement($form->get('phone'));
+        echo $this->formElementErrors($form->get('phone'));
+    ?></dd>
+
+    <dt><?php echo $this->formLabel($form->get('address')); ?></dt>
+    <dd><?php
+        echo $this->formElement($form->get('address'));
+        echo $this->formElementErrors($form->get('address'));
+    ?></dd>
+
+    <dt><?php echo $this->formLabel($form->get('description')); ?></dt>
+    <dd><?php
+        echo $this->formElement($form->get('description'));
+        echo $this->formElementErrors($form->get('description'));
+    ?></dd>
+
+    <dt><?php echo $this->formLabel($form->get('type')); ?></dt>
+    <dd><?php
+        echo $this->formElement($form->get('type'));
+        echo $this->formElementErrors($form->get('type'));
+    ?></dd>
+
+    <dd><?php
+        echo $this->formElement($form->get('submit'));
+        echo $this->formElementErrors($form->get('submit'));
+    ?></dd>
+
+</dl>
+<?php echo $this->form()->closeTag() ?>
+</section>

@@ -1,0 +1,117 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?php echo $this->headTitle($this->translate('Communication Application'))->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
+
+        <!-- Le styles -->
+        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
+            ->prependStylesheet($this->basePath('css/zf2-style.css'))
+            ->prependStylesheet($this->basePath('js/bootstrap-5.0.0/css/bootstrap.min.css'))
+            ->prependStylesheet($this->basePath('js/jquery-ui-1.12.1/jquery-ui.min.css'))
+            ->prependStylesheet($this->basePath('js/jquery-ui-1.12.1/jquery-ui.theme.min.css'))
+        ?>
+
+        <!-- Scripts -->
+        <?= $this->headScript()
+            ->prependFile($this->basePath('js/zf2-main.js'))
+            ->prependFile($this->basePath('js/functions/zf2-functions.js'))
+            ->prependFile($this->basePath('js/helpers/zf2-console.js'))
+            ->prependFile($this->basePath('js/bootstrap-5.0.0/js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/jquery-ui-1.12.1/jquery-ui.min.js'))
+            ->prependFile($this->basePath('js/jquery-ui-1.12.1/external/jquery/jquery.js'))
+        ?>
+
+        <!-- Override Styles -->
+       <?php echo $this->headStyle(); ?>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="<?= $this->url('home') ?>">
+                        <img src="<?= $this->basePath('img/zf-logo-mark.svg') ?>" height="28"
+                             alt="Zend Framework <?= \Application\Module::VERSION ?>"/>&nbsp;
+                        <?php echo $this->translate('Communication Application') ?>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="<?= $this->url('home') ?>">
+                                <?php echo $this->translate('Application') ?>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="<?php echo $this->url('admin/store', ['action' => 'index']) ?>">
+                                <?php echo $this->translate('Store') ?>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="<?= $this->url('admin') ?>">
+                                <?php echo $this->translate('Admin') ?>
+                            </a>
+                        </li>
+                        <?php if ($this->userEmail) : ?>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="<?php echo $this->url('admin/media', ['action' => 'index']) ?>">
+                                    <?php echo $this->translate('Media') ?>
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="<?php echo $this->url('admin/google', ['action' => 'index']) ?>">
+                                    <?php echo $this->translate('Google') ?>
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="<?php echo $this->url('admin/lucene', ['action' => 'index']) ?>">
+                                    <?php echo $this->translate('Lucene') ?>
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="<?php echo $this->url('admin/group-chat', ['action' => 'index']) ?>">
+                                    <?php echo $this->translate('Group chat') ?>
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="<?php echo $this->url('admin/group-chat', ['action' => 'send-offline-message']) ?>">
+                                    <?php echo $this->translate('E-mail') ?>
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="<?php echo $this->url('admin/store-admin', ['action' => 'index']) ?>">
+                                    <?php echo $this->translate('Store admin') ?>
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="<?php echo $this->url('admin/html5', ['action' => 'index']) ?>">
+                                    <?php echo $this->translate('Html5') ?>
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="<?php echo $this->url('admin/login', ['action' => 'logout']) ?>">
+                                    <?php echo $this->translate('Logout') ?>
+                                </a>
+                            </li>
+                        <?php endif ?>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <?php echo $this->content; ?>
+            <hr>
+            <footer>
+                <p>&copy; 2005 - 2012 by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
+            </footer>
+        </div> <!-- /container -->
+        <?php echo $this->inlineScript() ?>
+    </body>
+</html>

@@ -1,0 +1,102 @@
+<div class="jumbotron">
+    <h1>Welcome to <span class="zf-green">ZF Mobile Application</span></h1>
+</div>
+<div class="row">
+    <!-- Index -->
+    <div id="page1" data-role="page">
+        <div data-role="header" data-theme="a">
+            <h3>
+                Customers
+            </h3>
+        </div>
+        <div data-role="content">
+            <ul id="customers" data-role="listview" data-inset="true" data-divider-theme="b">
+                <li role="heading" data-role="list-divider">
+                    Customers
+                </li>
+                <li data-theme="">
+                    <a href="#page1" data-transition="none">
+                        Customer1
+                    </a>
+                </li>
+                <li data-theme="c">
+                    <a href="#page1" data-transition="none">
+                        Customer2
+                    </a>
+                </li>
+            </ul>
+            <a id="getListBtn" href="#" data-role="button">
+                Get List
+            </a>
+            <h3 id="errorMessage">
+                /messages/
+            </h3>
+            <a id="button8" href="#page4" data-role="button">
+                Search
+            </a>
+        </div>
+    </div>
+    <!-- customerDetails -->
+    <div id="page2" data-role="page">
+        <div data-role="header" data-theme="a">
+            <h3>
+                Details
+            </h3>
+            <a class="ui-btn-left" href="#page1" data-role="button" data-iconpos="left"
+               data-icon="arrow-l">
+                Back
+            </a>
+        </div>
+        <div data-role="content">
+            <h2>
+                #<span id="customer_id">Customer id</span> - <span id="customer_name">Customer name</span>
+            </h2>
+            <h4 id="customer_address">
+                Customer address
+            </h4>
+            <h4 id="customer_birthday">
+                Customer birthday
+            </h4>
+            <h4 id="customer_email">
+                Customer email
+            </h4>
+            <h6 id="customer_description">
+                Customer description
+            </h6>
+            <h5 id="customer_activity">
+                Is currently in:
+            </h5>
+            <a id="customercall" href="#page1" data-role="button">
+                Make a call
+            </a>
+        </div>
+    </div>
+    <!-- searchCustomers -->
+    <div id="page4" data-role="page">
+        <div id="pageheader4" data-role="header" data-theme="a">
+            <h3 id="heading7">
+                Search
+            </h3>
+            <a class="ui-btn-right" id="button7" href="#page1" data-role="button"
+               data-iconpos="left" data-icon="arrow-l">
+                Back
+            </a>
+        </div>
+        <div data-role="content">
+            <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup">
+                    <label for="custsearchinput">
+                    </label>
+                    <input id="custsearchinput" type="text" placeholder="Customer Name" value="">
+                </fieldset>
+            </div>
+            <a id="searchbutton" href="#" data-role="button">Search</a>
+            <ul id="custlistview" data-role="listview" data-inset="true" data-divider-theme="b">
+                <li data-theme="c">
+                    <a href="#page2" data-transition="slide">Button</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<?php

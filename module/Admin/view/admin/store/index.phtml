@@ -1,0 +1,16 @@
+<h1><?php echo $this->translate('Products') ?></h1>
+<table class="table">
+<tr>
+<?php foreach ($storeProducts as $product) : ?>
+    <td>
+        <strong> <?php echo $this->escapeHtml($product->name);?> </strong> <br />
+        <?php echo $this->escapeHtml($product->desc);?> <br />
+        <?php echo $this->translate('Cost:') ?> <strong>$<?php echo $this->escapeHtml($product->cost);?></strong>
+        <br /><br />
+        <a href="<?php echo $this->url('admin/store', ['action' => 'productDetail', 'id' => $product->id]);?>">
+            <?php echo $this->translate('View Product') ?>
+        </a>
+    </td>
+<?php endforeach; ?>
+</tr>
+</table>

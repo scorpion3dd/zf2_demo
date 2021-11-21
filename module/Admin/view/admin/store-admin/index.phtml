@@ -1,0 +1,37 @@
+<a href="<?php echo $this->url('admin/store-admin');?>">
+    <?php echo $this->translate('View Products') ?>
+</a> |
+<a href="<?php echo $this->url('admin/store-admin', ['action' => 'listOrders']);?>">
+    <?php echo $this->translate('View Orders') ?>
+</a>
+<hr />
+<h3><?php echo $this->translate('Manage Products') ?></h3>
+<table class="table">
+<tr>
+    <th><?php echo $this->translate('ID') ?></th>
+    <th><?php echo $this->translate('Product Name') ?></th>
+    <th><?php echo $this->translate('Description') ?></th>
+    <th><?php echo $this->translate('Cost') ?></th>
+    <th><?php echo $this->translate('Actions') ?></th>
+</tr>
+<?php foreach ($storeProducts as $product) : ?>
+<tr>
+    <td><?php echo $this->escapeHtml($product->id);?></td>
+    <td><?php echo $this->escapeHtml($product->name);?></td>
+    <td><?php echo $this->escapeHtml($product->desc);?></td>
+    <td><?php echo $this->escapeHtml($product->cost);?></td>
+    <td>
+        <a href="<?php echo $this->url('admin/store-admin', ['action' => 'editProduct', 'id' => $product->id]);?>">
+            <?php echo $this->translate('Modify') ?>
+        </a> |
+        <a href="<?php echo $this->url('admin/store-admin', ['action' => 'deleteProduct', 'id' => $product->id]);?>"
+           onclick="return confirm('Are you sure?')">
+            <?php echo $this->translate('Delete') ?>
+        </a>
+    </td>
+</tr>
+<?php endforeach; ?>
+</table>
+<a href="<?php echo $this->url('admin/store-admin', ['action' => 'newProduct']);?>">
+    <?php echo $this->translate('Add Product') ?>
+</a>

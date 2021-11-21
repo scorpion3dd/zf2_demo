@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Communication Application</title>
+    <meta name="viewport" content="width&#x3D;device-width,&#x20;initial-scale&#x3D;1.0">
+    <!-- Le styles -->
+    <link href="&#x2F;js&#x2F;jquery-ui-1.12.1&#x2F;jquery-ui.theme.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+    <link href="&#x2F;js&#x2F;jquery-ui-1.12.1&#x2F;jquery-ui.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+    <link href="&#x2F;js&#x2F;bootstrap-5.0.0&#x2F;css&#x2F;bootstrap.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+    <link href="&#x2F;css&#x2F;zf2-style.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+    <link href="&#x2F;img&#x2F;favicon.ico" rel="shortcut&#x20;icon" type="image&#x2F;vnd.microsoft.icon">
+    <!-- Scripts -->
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;jquery-ui-1.12.1&#x2F;external&#x2F;jquery&#x2F;jquery.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;jquery-ui-1.12.1&#x2F;jquery-ui.min.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;bootstrap-5.0.0&#x2F;js&#x2F;bootstrap.min.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;helpers&#x2F;zf2-console.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;functions&#x2F;zf2-functions.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;zf2-main.js"></script>
+    <!-- Override Styles -->
+
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img src="/img/zf-logo-mark.svg" height="28"
+                     alt="Zend Framework 1.1.1dev"/>&nbsp;
+                Communication Application                    </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">
+                        Application                            </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/admin/store">
+                        Store                            </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/admin">
+                        Admin                            </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <h3>Books</h3>
+
+    <form method="post" name="New&#x20;Google&#x20;Album" id="New&#x20;Google&#x20;Album"><div class="mb-3 row">    <label class="col-sm-2 col-form-label"><label for="message">Words in book titles</label></label>    <div class="col-sm-10"><textarea name="words" class="form-control" id="message" required="required">PHP</textarea>    </div>    <div></div></div><div class="mb-3 row">    <label class="col-sm-2 col-form-label"><label for="submit"> </label></label>    <div class="col-sm-10"><input name="submit" class="ui-button" type="submit" value="Search">    </div>    <div></div></div></form>
+    <table class="table">
+        <tr>
+            <th style="width: 300px">authors</th>
+            <th>title</th>
+            <th>image</th>
+            <th>url</th>
+        </tr>
+        <tr>
+            <td>
+                United States. Congress. House. Committee on Interstate and Foreign Commerce. Subcommittee on Oversight and Investigations    </td>
+            <td>
+                Delivery of Health Care, California PHP&#039;s    </td>
+            <td>
+                <img src="http://books.google.com/books/content?id=6LTQAAAAMAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api" height="100px"
+                     alt="Delivery of Health Care, California PHP&#039;s"/>
+            </td>
+            <td>
+                <a href="https://books.googleapis.com/books/v1/volumes/6LTQAAAAMAAJ" target="_blank">
+                    json        </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                Proceedings of the Grand Lodge of Free and Accepted Masons of the District of Columbia    </td>
+            <td>
+                <img src="http://books.google.com/books/content?id=xoBPAAAAYAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api" height="100px"
+                     alt="Proceedings of the Grand Lodge of Free and Accepted Masons of the District of Columbia"/>
+            </td>
+            <td>
+                <a href="https://books.googleapis.com/books/v1/volumes/xoBPAAAAYAAJ" target="_blank">
+                    json        </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Royal arch masons. Grand Chapter (Mich.)    </td>
+            <td>
+                Transactions of the ... Annual Convocation ...    </td>
+            <td>
+                <img src="http://books.google.com/books/content?id=lKNJAAAAMAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api" height="100px"
+                     alt="Transactions of the ... Annual Convocation ..."/>
+            </td>
+            <td>
+                <a href="https://books.googleapis.com/books/v1/volumes/lKNJAAAAMAAJ" target="_blank">
+                    json        </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Royal Arch Masons. Grand Chapter of Kansas    </td>
+            <td>
+                Proceedings of the Most Excellent Grand Chapter of Royal Arch Masons of Kansas    </td>
+            <td>
+                <img src="http://books.google.com/books/content?id=hHgtAQAAMAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api" height="100px"
+                     alt="Proceedings of the Most Excellent Grand Chapter of Royal Arch Masons of Kansas"/>
+            </td>
+            <td>
+                <a href="https://books.googleapis.com/books/v1/volumes/hHgtAQAAMAAJ" target="_blank">
+                    json        </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Royal Arch Masons. Grand Chapter of the District of Columbia    </td>
+            <td>
+                Proceedings of the Grand Chapter of Royal Arch Masons of the District of Columbia    </td>
+            <td>
+                <img src="http://books.google.com/books/content?id=sHstAQAAMAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api" height="100px"
+                     alt="Proceedings of the Grand Chapter of Royal Arch Masons of the District of Columbia"/>
+            </td>
+            <td>
+                <a href="https://books.googleapis.com/books/v1/volumes/sHstAQAAMAAJ" target="_blank">
+                    json        </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                United States. Congress. House. Committee on Energy and Commerce. Subcommittee on Health    </td>
+            <td>
+                Smokeless Tobacco    </td>
+            <td>
+                <img src="http://books.google.com/books/content?id=241KAQAAMAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api" height="100px"
+                     alt="Smokeless Tobacco"/>
+            </td>
+            <td>
+                <a href="https://books.googleapis.com/books/v1/volumes/241KAQAAMAAJ" target="_blank">
+                    json        </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                Proceedings    </td>
+            <td>
+                <img src="http://books.google.com/books/content?id=ZcAqAAAAMAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api" height="100px"
+                     alt="Proceedings"/>
+            </td>
+            <td>
+                <a href="https://books.googleapis.com/books/v1/volumes/ZcAqAAAAMAAJ" target="_blank">
+                    json        </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                Proceedings of the Grand Chapter of Royal Arch Masons of the State of California at Its ... Annual Convocation    </td>
+            <td>
+                <img src="http://books.google.com/books/content?id=fdkqAAAAMAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api" height="100px"
+                     alt="Proceedings of the Grand Chapter of Royal Arch Masons of the State of California at Its ... Annual Convocation"/>
+            </td>
+            <td>
+                <a href="https://books.googleapis.com/books/v1/volumes/fdkqAAAAMAAJ" target="_blank">
+                    json        </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                Medicaid SpDATA System    </td>
+            <td>
+                <img src="http://books.google.com/books/content?id=CsdmJx-wSFsC&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api" height="100px"
+                     alt="Medicaid SpDATA System"/>
+            </td>
+            <td>
+                <a href="https://books.googleapis.com/books/v1/volumes/CsdmJx-wSFsC" target="_blank">
+                    json        </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                Code of Federal Regulations    </td>
+            <td>
+                <img src="http://books.google.com/books/content?id=jv8dAAAAMAAJ&amp;printsec=frontcover&amp;img=1&amp;zoom=1&amp;edge=curl&amp;source=gbs_api" height="100px"
+                     alt="Code of Federal Regulations"/>
+            </td>
+            <td>
+                <a href="https://books.googleapis.com/books/v1/volumes/jv8dAAAAMAAJ" target="_blank">
+                    json        </a>
+            </td>
+        </tr>
+    </table>            <hr>
+    <footer>
+        <p>&copy; 2005 - 2012 by Zend Technologies Ltd. All rights reserved.</p>
+    </footer>
+</div> <!-- /container -->
+</body>
+</html>

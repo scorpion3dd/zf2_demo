@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Message list</title>
+    <style type="text/css">
+        #chat {
+            overflow: hidden;
+            max-height: calc(95vh - 1px);
+            height: calc(95vh - 1px);
+        }
+
+        #messages {
+            background-color: #edede2;
+            overflow: auto;
+            max-height: calc(100vh - 50px);
+            height: calc(100vh - 50px);
+            margin: 5px 10px;
+            padding: 5px 10px 5px 10px;
+            border-radius: 5px;
+        }
+
+        .userMsg {
+            margin-right: 112px;
+            margin-bottom: 15px;
+            word-break: break-word;
+            padding: 10px 10px 5px 10px;
+        }
+
+        .userMsgText {
+            background: #e4e8f8;
+            border-radius: 15px;
+            padding: 5px 10px 5px 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .userMsgTime {
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 1px;
+            color: #93b3a8;
+            display: block;
+            position: relative;
+            top: -3px;
+            text-align: left;
+            left: 4px;
+        }
+
+        .userMsgUser {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1px;
+            color: #6a9183;
+            text-transform: uppercase;
+        }
+
+        .botMsg {
+            margin-left: 112px;
+            margin-bottom: 15px;
+            word-break: break-word;
+            padding: 10px 10px 5px 10px;
+        }
+
+        .botMsgText {
+            background: #e4f8f1;
+            border-radius: 15px;
+            padding: 5px 10px 5px 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .botMsgTime {
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 1px;
+            color: #6a9183;
+            display: block;
+            position: relative;
+            top: -3px;
+            text-align: right;
+            left: 4px;
+        }
+
+        .botMsgUser {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 1px;
+            color: #6a9183;
+            text-transform: uppercase;
+        }
+    </style>
+    <script type="application/javascript" src="/js/jquery-ui-1.12.1/external/jquery/jquery.js" ></script>
+    <script type="application/javascript" src="/js/helpers/zf2-console.js" ></script>
+    <script type="application/javascript">
+        $(function() {
+            function scrolldDown(obj) {
+                let block = document.getElementById(obj);
+                Zf2Console.consoleLog("In iframeId = messageListFrame blockId =", obj);
+                block.scrollTop = block.scrollHeight;
+            }
+            setTimeout(scrolldDown, 500, "messages");
+        });
+    </script>
+</head>
+<body>
+<div id="chat">
+    <div>Messages</div>
+    <div id="messages">
+        <div class="botMsg message">
+                <span class="botMsgTime msg-user">
+                    <span class="botMsgUser">
+                        admin                    </span>
+                    <b>(admin@mail.ru)</b>
+                    <span class="msgStatus" style="visibility: visible;">
+                        <svg width="9" height="7" viewBox="0 0 9 7" fill="none">
+                            <path d="M3.44626 6.86215C3.36035 6.94857 3.24314 6.99678 3.12138 6.99678C2.99963 6.99678 2.88242 6.94857 2.79651 6.86215L0.201944 4.26717C-0.0673148 3.99791 -0.0673148 3.56129 0.201944 3.29254L0.526822 2.96758C0.796165 2.69832 1.23228 2.69832 1.50154 2.96758L3.12138 4.58751L7.49844 0.210367C7.76779 -0.0588919 8.20432 -0.0588919 8.47316 0.210367L8.79804 0.535329C9.0673 0.804588 9.0673 1.24112 8.79804 1.50996L3.44626 6.86215Z" fill="#CFDCDF"></path>
+                        </svg>
+                    </span>
+                    <span class='msg-time'>
+                        [2021-05-04 15:38:46]
+                    </span>
+                </span>
+            <div class="botMsgText msg-data">
+                Здесь могут производиться вычисления с указанием единиц измерения, тут можно складывать величины, выраженные в одних и тех же единицах измерения, можно умножать некие величины на значения, единицы измерения которых не указаны.                </div>
+        </div>
+        <div class="botMsg message">
+                <span class="botMsgTime msg-user">
+                    <span class="botMsgUser">
+                        admin6                    </span>
+                    <b>(admin6@mail.ru)</b>
+                    <span class="msgStatus" style="visibility: visible;">
+                        <svg width="9" height="7" viewBox="0 0 9 7" fill="none">
+                            <path d="M3.44626 6.86215C3.36035 6.94857 3.24314 6.99678 3.12138 6.99678C2.99963 6.99678 2.88242 6.94857 2.79651 6.86215L0.201944 4.26717C-0.0673148 3.99791 -0.0673148 3.56129 0.201944 3.29254L0.526822 2.96758C0.796165 2.69832 1.23228 2.69832 1.50154 2.96758L3.12138 4.58751L7.49844 0.210367C7.76779 -0.0588919 8.20432 -0.0588919 8.47316 0.210367L8.79804 0.535329C9.0673 0.804588 9.0673 1.24112 8.79804 1.50996L3.44626 6.86215Z" fill="#CFDCDF"></path>
+                        </svg>
+                    </span>
+                    <span class='msg-time'>
+                        [2021-05-04 16:04:49]
+                    </span>
+                </span>
+            <div class="botMsgText msg-data">
+                Hisense Smart TV быстрая установка через браузер                </div>
+        </div>
+        <div class="botMsg message">
+                <span class="botMsgTime msg-user">
+                    <span class="botMsgUser">
+                        admin                    </span>
+                    <b>(admin@mail.ru)</b>
+                    <span class="msgStatus" style="visibility: visible;">
+                        <svg width="9" height="7" viewBox="0 0 9 7" fill="none">
+                            <path d="M3.44626 6.86215C3.36035 6.94857 3.24314 6.99678 3.12138 6.99678C2.99963 6.99678 2.88242 6.94857 2.79651 6.86215L0.201944 4.26717C-0.0673148 3.99791 -0.0673148 3.56129 0.201944 3.29254L0.526822 2.96758C0.796165 2.69832 1.23228 2.69832 1.50154 2.96758L3.12138 4.58751L7.49844 0.210367C7.76779 -0.0588919 8.20432 -0.0588919 8.47316 0.210367L8.79804 0.535329C9.0673 0.804588 9.0673 1.24112 8.79804 1.50996L3.44626 6.86215Z" fill="#CFDCDF"></path>
+                        </svg>
+                    </span>
+                    <span class='msg-time'>
+                        [2021-05-04 16:07:03]
+                    </span>
+                </span>
+            <div class="botMsgText msg-data">
+                Такому рецепту меня научила бабушка. А я вам предложу. Только обычные дрожжи здесь заменены на сухие активные. Они не такие капризные, испечь куличи по бабушкиному рецепту с ними гораздо проще.                </div>
+        </div>
+        <div class="botMsg message">
+                <span class="botMsgTime msg-user">
+                    <span class="botMsgUser">
+                        Sim Turner                    </span>
+                    <b>(labadie.terrence@hotmail.com)</b>
+                    <span class="msgStatus" style="visibility: visible;">
+                        <svg width="9" height="7" viewBox="0 0 9 7" fill="none">
+                            <path d="M3.44626 6.86215C3.36035 6.94857 3.24314 6.99678 3.12138 6.99678C2.99963 6.99678 2.88242 6.94857 2.79651 6.86215L0.201944 4.26717C-0.0673148 3.99791 -0.0673148 3.56129 0.201944 3.29254L0.526822 2.96758C0.796165 2.69832 1.23228 2.69832 1.50154 2.96758L3.12138 4.58751L7.49844 0.210367C7.76779 -0.0588919 8.20432 -0.0588919 8.47316 0.210367L8.79804 0.535329C9.0673 0.804588 9.0673 1.24112 8.79804 1.50996L3.44626 6.86215Z" fill="#CFDCDF"></path>
+                        </svg>
+                    </span>
+                    <span class='msg-time'>
+                        [2021-05-04 16:41:27]
+                    </span>
+                </span>
+            <div class="botMsgText msg-data">
+                Это позволит вам использовать $this-&gt;getServiceLocator() в контроллере.                </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

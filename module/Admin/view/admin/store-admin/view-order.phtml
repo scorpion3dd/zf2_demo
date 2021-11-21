@@ -1,0 +1,59 @@
+<a href="<?php echo $this->url('admin/store-admin');?>">
+    <?php echo $this->translate('View Products') ?>
+</a> |
+<a href="<?php echo $this->url('admin/store-admin', ['action' => 'listOrders']);?>">
+    <?php echo $this->translate('View Orders') ?>
+</a>
+<hr />
+
+<h3><?php echo $this->translate('Order Information') ?></h3>
+<hr />
+<h5><?php echo $this->translate('Order Num #') ?><?php echo $storeOrder->id; ?></h5>
+<h5><?php echo $this->translate('Status : ') ?><?php echo $storeOrder->status; ?></h5>
+
+<table width="30%" border="1">
+    <tr>
+        <td>
+            <h6><?php echo $this->translate('Shipping/Billing Information') ?></h6>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <?php echo $storeOrder->first_name . " " . $storeOrder->last_name; ?> <br />
+            <?php echo $storeOrder->email; ?> <br />
+            <?php echo $storeOrder->ship_to_street; ?> <br />
+            <?php echo $storeOrder->ship_to_city . ", " . $storeOrder->ship_to_state; ?> <br />
+            <?php echo $storeOrder->ship_to_zip; ?> <br />
+        </td>
+    </tr>
+</table>
+<hr />
+<h5><?php echo $this->translate('Order Details') ?></h5>
+<table width="80%" border="1">
+    <tr>
+        <th><?php echo $this->translate('Name') ?></th>
+        <th><?php echo $this->translate('Qty') ?></th>
+        <th><?php echo $this->translate('Unit Cost') ?></th>
+        <th><?php echo $this->translate('Total') ?></th>
+    </tr>
+    <tr>
+        <td> <?php echo $orderProduct->name; ?> </td>
+        <td> <?php echo $storeOrder->qty; ?> </td>
+        <td> <?php echo $orderProduct->cost; ?> </td>
+        <td> <?php echo $storeOrder->total; ?> </td>
+    </tr>
+</table>
+<hr />
+<h5><?php echo $this->translate('Update Order Status') ?></h5>
+<a href="<?php echo $this->url('admin/store-admin', ['action' => 'updateOrderStatus', 'id' => $storeOrder->id, 'subaction' => 'new']);?>">
+    <?php echo $this->translate('Set as New') ?>
+</a> |
+<a href="<?php echo $this->url('admin/store-admin', ['action' => 'updateOrderStatus', 'id' => $storeOrder->id, 'subaction' => 'completed']);?>">
+    <?php echo $this->translate('Set as Complete') ?>
+</a> |
+<a href="<?php echo $this->url('admin/store-admin', ['action' => 'updateOrderStatus', 'id' => $storeOrder->id, 'subaction' => 'shipped']);?>">
+    <?php echo $this->translate('Set as Shipped') ?>
+</a> |
+<a href="<?php echo $this->url('admin/store-admin', ['action' => 'updateOrderStatus', 'id' => $storeOrder->id, 'subaction' => 'cancelled']);?>">
+    <?php echo $this->translate('Set as Cancelled') ?>
+</a>

@@ -1,0 +1,19 @@
+<section class="register-confirm">
+    <h2><?php echo $this->translate('Albums photo') ?></h2>
+    <br>
+    <a href="<?php echo $this->url('admin/google', ['action' => 'albums']);?>">
+        &raquo; <?php echo $this->translate('Albums') ?>
+    </a>
+    <br>
+    <br>
+    <p>
+        <?php
+        echo $this->translate("Create new album");
+        echo ' <b>' . $name . '</b>, ';
+        echo $this->translate("with id");
+        echo ' = <b>' . $albumId . '</b>, ';
+        echo $this->translate("sucessfull")
+        ?>
+    </p>
+</section>
+

@@ -1,0 +1,44 @@
+[
+  {
+    "id":1,
+    "name":"admin",
+    "email":"admin@mail.ru",
+    "birthday":"2021-09-23",
+    "phone":"46456-8989",
+    "address":"Kiev",
+    "description":"By default",
+    "type":1,
+    "password":"21232f297a57a5a743894a0e4a801fc3",
+    "confirmPassword":"",
+    "created":"2021-10-03 01:12:11",
+    "updated":"2021-10-03 01:12:12"
+  },
+  {
+    "id":2,
+    "name":"admin6",
+    "email":"admin6@mail.ru",
+    "birthday":"1999-03-26",
+    "phone":"+380987776655",
+    "address":"Sumy",
+    "description":"Using this feature",
+    "type":4,
+    "password":"c6b853d6a7cc7ec49172937f68f446c8",
+    "confirmPassword":"",
+    "created":"2021-06-07 19:24:18",
+    "updated":"2021-06-07 19:25:19"
+  },
+  {
+    "id":3,
+    "name":"Sim Turner",
+    "email":"labadie.terrence@hotmail.com",
+    "birthday":"1980-08-14",
+    "phone":"997-477-2528",
+    "address":"26647 Harold StreetsPort Karina, CO 80283",
+    "description":"Aliquam quia voluptatem enim. Ipsam velit quasi maxime quis nesciunt sequi repellendus. Et nihil id nostrum vero. Voluptas est ab molestiae.",
+    "type":4,
+    "password":"aea7eecb0462d963461211375e424ce9",
+    "confirmPassword":"",
+    "created":"2021-06-07 20:56:27",
+    "updated":""
+  }
+]

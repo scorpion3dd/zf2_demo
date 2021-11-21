@@ -1,0 +1,37 @@
+<h3><?php echo $this->translate('New Album') ?></h3>
+<a href="<?php echo $this->url('admin/google', ['action' => 'albums']);?>">
+    &raquo; <?php echo $this->translate('Albums') ?>
+</a>
+<br>
+<br>
+<?php if ($this->error) : ?>
+<p class="error">
+    <?php echo $this->translate('There were one or more isues with your submission. Please correct them as indicated below.') ?>
+</p>
+<?php endif ?>
+<section>
+<?php
+$form = $this->form;
+$form->prepare();
+$form->setAttribute('action', $this->url('admin/google', ['action' => 'new-album']));
+$form->setAttribute('method', 'post');
+
+echo $this->form()->openTag($form);
+?>
+<dl class="zend_form">
+<dt><?php echo $this->formLabel($form->get('name')); ?></dt>
+<?php echo $this->formElement($form->get('id')); ?>
+
+<dd><?php
+    echo $this->formElement($form->get('name'));
+    echo $this->formElementErrors($form->get('name'));
+?></dd>
+
+<dd><?php
+    echo $this->formElement($form->get('submit'));
+    echo $this->formElementErrors($form->get('submit'));
+?></dd>
+
+</dl>
+<?php echo $this->form()->closeTag() ?>
+</section>

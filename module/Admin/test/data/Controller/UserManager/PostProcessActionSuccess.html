@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Communication Application</title>
+    <meta name="viewport" content="width&#x3D;device-width,&#x20;initial-scale&#x3D;1.0">
+    <!-- Le styles -->
+    <link href="&#x2F;js&#x2F;jquery-ui-1.12.1&#x2F;jquery-ui.theme.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+    <link href="&#x2F;js&#x2F;jquery-ui-1.12.1&#x2F;jquery-ui.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+    <link href="&#x2F;js&#x2F;bootstrap-5.0.0&#x2F;css&#x2F;bootstrap.min.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+    <link href="&#x2F;css&#x2F;zf2-style.css" media="screen" rel="stylesheet" type="text&#x2F;css">
+    <link href="&#x2F;img&#x2F;favicon.ico" rel="shortcut&#x20;icon" type="image&#x2F;vnd.microsoft.icon">
+    <!-- Scripts -->
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;jquery-ui-1.12.1&#x2F;external&#x2F;jquery&#x2F;jquery.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;jquery-ui-1.12.1&#x2F;jquery-ui.min.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;bootstrap-5.0.0&#x2F;js&#x2F;bootstrap.min.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;helpers&#x2F;zf2-console.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;functions&#x2F;zf2-functions.js"></script>
+    <script type="text&#x2F;javascript" src="&#x2F;js&#x2F;zf2-main.js"></script>
+    <!-- Override Styles -->
+
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img src="/img/zf-logo-mark.svg" height="28"
+                     alt="Zend Framework 1.1.1dev"/>&nbsp;
+                Communication Application                    </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">
+                        Application                            </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/admin/store">
+                        Store                            </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/admin">
+                        Admin                            </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <h3>Edit User Information</h3>
+
+    <p class="error">
+        There were one or more isues with your submission. Please correct them as
+        indicated below.
+    </p>
+    <section>
+        <form method="post" name="Edit&#x20;User" action="&#x2F;admin&#x2F;user-manager&#x2F;process" id="Edit&#x20;User"><dl class="zend_form">
+            <dt><label for="name">Full Name</label></dt>
+            <input name="id" type="hidden" value="0">
+            <dd><input name="name" type="text" required="required" value="Ivan"></dd>
+
+            <dt><label for="email">Email</label></dt>
+            <dd><input name="email" type="email" required="required" value="ivan&#x40;gmail.com"></dd>
+
+            <dt><label for="birthday">Birthday</label></dt>
+            <dd><input name="birthday" type="date" required="required" value="1985-07-30"></dd>
+
+            <dt><label for="phone">Phone</label></dt>
+            <dd><input name="phone" type="text" required="required" value="0987779988"></dd>
+
+            <dt><label for="address">Address</label></dt>
+            <dd><input name="address" type="text" required="required" value="London"></dd>
+
+            <dt><label for="description">Description</label></dt>
+            <dd><input name="description" type="text" required="required" value=""><ul><li>Value is required and can't be empty</li></ul></dd>
+
+            <dt><label for="type">Type</label></dt>
+            <dd><input name="type" type="number" required="required" min="1" max="5" step="1" value="1"><ul><li>Value is required and can't be empty</li></ul></dd>
+
+            <dd><input name="submit" class="ui-button" type="submit" value="Save"></dd>
+
+        </dl>
+        </form></section>
+    <hr>
+    <footer>
+        <p>&copy; 2005 - 2012 by Zend Technologies Ltd. All rights reserved.</p>
+    </footer>
+</div> <!-- /container -->
+</body>
+</html>

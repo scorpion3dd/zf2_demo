@@ -1,0 +1,80 @@
+<h1><?php echo $this->translate('Lucene indexing and search') ?></h1>
+<a href="<?php echo $this->url('admin/lucene', ['action' => 'index']);?>">
+    &raquo; <?php echo $this->translate('Lucene') ?>
+</a>
+<br>
+<br>
+<?php
+echo $this->form()->openTag($form);
+foreach ($form as $element) {
+    echo '<div class="mb-3 row">';
+    echo '    <label class="col-sm-2 col-form-label">'.$this->formLabel($element).'</label>';
+    echo '    <div class="col-sm-10">';
+    echo $this->formElement($element);
+    echo '    </div>';
+    echo '    <div>'.$this->formElementErrors($element).'</div>';
+    echo '</div>';
+}
+echo $this->form()->closeTag();
+?>
+<a href="<?php echo $this->url('admin/lucene', ['action' => 'generate-index']);?>" class="ui-button">
+    <?php echo $this->translate('Generate index') ?>
+</a>
+<?php
+if (isset($status) && $status == 'OK') {
+    echo $this->translate('Generate index successful, count') . " $count";
+}
+?>
+<hr>
+<?php
+if (isset($searchResults) && count($searchResults)) {
+    ?>
+    <h5>Results</h5>
+    <table  style="width: 600px; border:1px solid #f5f5f5;">
+        <tr>
+            <th width="30%" >Label</th>
+            <th width="30%" >Owner</th>
+            <th >File</th>
+            <th >class</th>
+            <th >user_id</th>
+            <th >name</th>
+            <th >description</th>
+            <th style="width: 150px">birthday</th>
+            <th style="width: 150px">email</th>
+            <th style="width: 150px">phone</th>
+            <th style="width: 150px">address</th>
+        </tr>
+        <?php
+        foreach ($searchResults as $searchResult) {
+            if ($searchResult->class == 'Upload') {
+                ?>
+            <tr>
+                <td><?php echo $searchResult->label; ?></td>
+                <td><?php echo $searchResult->owner; ?></td>
+                <td><a href="<?php echo $this->escapeHtml($this->url(
+                    'admin/upload-manager',
+                    ['action' => 'fileDownload', 'id' => $searchResult->upload_id]
+                ));?>">Download</a></td>
+                <?php
+            } if ($searchResult->class == 'User') {
+                ?>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><?php echo $searchResult->class; ?></td>
+                <td><?php echo $searchResult->user_id; ?></td>
+                <td><?php echo $searchResult->name; ?></td>
+                <td><?php echo $searchResult->description; ?></td>
+                <td><?php echo $searchResult->birthday; ?></td>
+                <td><?php echo $searchResult->email; ?></td>
+                <td><?php echo $searchResult->phone; ?></td>
+                <td><?php echo $searchResult->address; ?></td>
+            </tr>
+                <?php
+            }
+        }
+        ?>
+    </table>
+    <?php
+}
+?>

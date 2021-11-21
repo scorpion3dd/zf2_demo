@@ -1,0 +1,29 @@
+<section class="register-confirm">
+    <h2>
+        <?php echo $this->translate('Upload photo to Google Album') ?>
+        <a href="<?php echo $this->url('admin/google', ['action' => 'photos', 'albumId' => $albumId]);?>">
+            <?php echo $albumTitle ?>
+        </a>
+        <?php echo ' ' . $this->translate("sucessfull") ?>
+    </h2>
+    <a href="<?php echo $this->url('admin/google', ['action' => 'albums']);?>">
+        &raquo; <?php echo $this->translate('Albums') ?>
+    </a>
+    <br>
+    <br>
+    <p>
+        <?php
+        echo $this->translate("New photo:");
+        echo '<br>' . $this->translate("fileName");
+        echo ' = <b>' . $fileName . '</b>, <br>';
+        echo $this->translate("productName");
+        echo ' = <b>' . $productName . '</b>, <br>';
+        echo $this->translate("productId");
+        echo ' = <b>' . $productId . '</b>, <br>';
+        ?>
+    </p>
+    <a href="<?php echo $this->escapeHtml($productUrl);?>" target="_blank">
+        <?php echo $this->translate('go to photo') ?>
+    </a>
+</section>
+

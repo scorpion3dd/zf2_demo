@@ -1,0 +1,29 @@
+<h3>Send Offline Message</h3>
+<br>
+<?php
+if (isset($status)) {
+    if ($status == 'success') {
+        echo '<div class="shadow p-3 mb-5 bg-info text-dark rounded">'
+            . $this->translate('Email sent successfully')
+        . '</div>';
+    }
+}
+echo $this->form()->openTag($form);
+echo '<div class="mb-3 row">';
+echo '    <label class="col-sm-2 col-form-label">From</label>';
+echo '    <div class="col-sm-10">';
+echo '        <input class="form-control" type="text" placeholder="'.$userName.'" 
+                aria-label="readonly input example" readonly>';
+echo '    </div>';
+echo '</div>';
+foreach ($form as $element) {
+    echo '<div class="mb-3 row">';
+    echo '    <label class="col-sm-2 col-form-label">'.$this->formLabel($element).'</label>';
+    echo '    <div class="col-sm-10">';
+    echo $this->formElement($element);
+    echo '    </div>';
+    echo '    <div>'.$this->formElementErrors($element).'</div>';
+    echo '</div>';
+}
+echo $this->form()->closeTag();
+?>

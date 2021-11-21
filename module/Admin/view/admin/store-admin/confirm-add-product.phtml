@@ -1,0 +1,21 @@
+<section class="register-confirm">
+    <h2><?php echo $this->translate('Products') ?></h2>
+    <a href="<?php echo $this->url('admin/store-admin');?>">
+        <?php echo $this->translate('View Products') ?>
+    </a> |
+    <a href="<?php echo $this->url('admin/store-admin', ['action' => 'listOrders']);?>">
+        <?php echo $this->translate('View Orders') ?>
+    </a>
+    <hr />
+    <br>
+    <p>
+        <?php
+        echo $this->translate("Create new product");
+        echo ' <b>' . $name . '</b>, ';
+        echo $this->translate("with id");
+        echo ' = <b>' . $productId . '</b>, ';
+        echo $this->translate("sucessfull")
+        ?>
+    </p>
+</section>
+

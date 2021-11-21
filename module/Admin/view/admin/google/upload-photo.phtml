@@ -1,0 +1,56 @@
+<h3>
+    <?php echo $this->translate('Upload photo to Google Album') ?>
+    <a href="<?php echo $this->url('admin/google', ['action' => 'photos', 'albumId' => $albumId]);?>">
+        <?php echo $albumTitle ?>
+    </a>
+</h3>
+<a href="<?php echo $this->url('admin/google', ['action' => 'albums']);?>">
+    &raquo; <?php echo $this->translate('Albums') ?>
+</a>
+<br>
+<br>
+<?php if ($this->error) : ?>
+<p class="error">
+    <?php echo $this->translate('There were one or more isues with your submission. Please correct them as indicated below.') ?>
+</p>
+<?php endif ?>
+<section>
+<?php
+$form = $this->form;
+$form->prepare();
+$form->setAttribute('action', $this->url('admin/google', ['action' => 'upload-photo']));
+
+echo $this->form()->openTag($form);
+?>
+<dl class="zend_form">
+    <input type="hidden" name="albumId" value="<?php echo $albumId; ?>" id="albumId">
+
+    <dt><?php echo $this->formLabel($form->get('name')); ?></dt>
+    <dd><?php
+        echo $this->formElement($form->get('name'));
+        echo $this->formElementErrors($form->get('name'));
+    ?>
+    </dd>
+
+    <dt><?php echo $this->formLabel($form->get('description')); ?></dt>
+    <dd><?php
+        echo $this->formElement($form->get('description'));
+        echo $this->formElementErrors($form->get('description'));
+    ?>
+    </dd>
+
+    <dt><?php echo $this->formLabel($form->get('fileupload')); ?></dt>
+    <dd><?php
+        echo $this->formElement($form->get('fileupload'));
+        echo $this->formElementErrors($form->get('fileupload'));
+    ?>
+    </dd>
+
+    <dd><?php
+        echo $this->formElement($form->get('submit'));
+        echo $this->formElementErrors($form->get('submit'));
+    ?>
+    </dd>
+</dl>
+<?php echo $this->form()->closeTag() ?>
+</section>
