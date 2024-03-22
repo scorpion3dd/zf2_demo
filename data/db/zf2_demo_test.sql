@@ -1,7 +1,7 @@
 ﻿SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO';
 SET NAMES 'utf8';
-USE `zf2.demo.test`;
+USE `zf2_demo_integration`;
 DROP TABLE IF EXISTS chat_messages;
 DROP TABLE IF EXISTS image_uploads;
 DROP TABLE IF EXISTS log;
@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS store_products;
 DROP TABLE IF EXISTS uploads;
 DROP TABLE IF EXISTS uploads_sharing;
 DROP TABLE IF EXISTS user;
-USE `zf2.demo.test`;
+USE `zf2_demo_integration`;
 
 
 CREATE TABLE user (

@@ -35,24 +35,24 @@ http://framework.zend.com/manual/en/requirements.html
 INSTALLATION
 ============
 
-1. Create DB zf2.demo.test
+1. Create DB zf2_demo_integration
 ~~~~~~
-CREATE DATABASE zf2.demo.test
+CREATE DATABASE zf2_demo_integration
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_0900_ai_ci;
 ~~~~~~
 
-2. Create DB zf2.demo
+2. Create DB zf2_demo
 ~~~~~~
-CREATE DATABASE zf2.demo
+CREATE DATABASE zf2_demo
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_0900_ai_ci;
 ~~~~~~
 
-3. Create tables in the zf2.demo database by executing the SQL script:
+3. Create tables in the zf2_demo database by executing the SQL script:
 
 ~~~~~~
-CREATE TABLE `zf2.demo`.user (
+CREATE TABLE `zf2_demo`.user (
   id int UNSIGNED NOT NULL AUTO_INCREMENT,
   name text NOT NULL,
   email varchar(255) NOT NULL,
@@ -72,11 +72,11 @@ AVG_ROW_LENGTH = 514,
 CHARACTER SET utf8,
 COLLATE utf8_general_ci;
 
-ALTER TABLE `zf2.demo`.user
+ALTER TABLE `zf2_demo`.user
 ADD UNIQUE INDEX idx_email (email);
 ~~~~~~
 ~~~~~~
-CREATE TABLE `zf2.demo`.log (
+CREATE TABLE `zf2_demo`.log (
   id bigint NOT NULL AUTO_INCREMENT,
   date datetime NOT NULL,
   type int NOT NULL,
@@ -90,7 +90,7 @@ CHARACTER SET utf8,
 COLLATE utf8_general_ci;
 ~~~~~~
 ~~~~~~
-CREATE TABLE `zf2.demo`.chat_messages (
+CREATE TABLE `zf2_demo`.chat_messages (
   id int NOT NULL AUTO_INCREMENT,
   user_id int NOT NULL,
   message varchar(1255) NOT NULL,
@@ -104,7 +104,7 @@ CHARACTER SET utf8,
 COLLATE utf8_general_ci;
 ~~~~~~
 ~~~~~~
-CREATE TABLE `zf2.demo`.image_uploads (
+CREATE TABLE `zf2_demo`.image_uploads (
   id int NOT NULL AUTO_INCREMENT,
   filename varchar(255) NOT NULL,
   thumbnail varchar(255) NOT NULL,
@@ -118,11 +118,11 @@ AVG_ROW_LENGTH = 8192,
 CHARACTER SET utf8,
 COLLATE utf8_general_ci;
 
-ALTER TABLE `zf2.demo`.image_uploads
+ALTER TABLE `zf2_demo`.image_uploads
 ADD UNIQUE INDEX filename (filename);
 ~~~~~~
 ~~~~~~
-CREATE TABLE `zf2.demo`.uploads (
+CREATE TABLE `zf2_demo`.uploads (
   id int NOT NULL AUTO_INCREMENT,
   filename varchar(255) NOT NULL,
   label varchar(255) NOT NULL,
@@ -135,11 +135,11 @@ AVG_ROW_LENGTH = 3276,
 CHARACTER SET utf8,
 COLLATE utf8_general_ci;
 
-ALTER TABLE `zf2.demo`.uploads
+ALTER TABLE `zf2_demo`.uploads
 ADD UNIQUE INDEX filename (filename);
 ~~~~~~
 ~~~~~~
-CREATE TABLE `zf2.demo`.uploads_sharing (
+CREATE TABLE `zf2_demo`.uploads_sharing (
   id int NOT NULL AUTO_INCREMENT,
   upload_id int NOT NULL,
   user_id int NOT NULL,
@@ -151,11 +151,11 @@ AVG_ROW_LENGTH = 2048,
 CHARACTER SET utf8,
 COLLATE utf8_general_ci;
 
-ALTER TABLE `zf2.demo`.uploads_sharing
+ALTER TABLE `zf2_demo`.uploads_sharing
 ADD UNIQUE INDEX upload_id (upload_id, user_id);
 ~~~~~~
 ~~~~~~
-CREATE TABLE `zf2.demo`.store_products (
+CREATE TABLE `zf2_demo`.store_products (
   id int NOT NULL AUTO_INCREMENT,
   name varchar(255) NOT NULL,
   `desc` varchar(255) NOT NULL,
@@ -169,7 +169,7 @@ CHARACTER SET utf8,
 COLLATE utf8_general_ci;
 ~~~~~~
 ~~~~~~
-CREATE TABLE `zf2.demo`.store_orders (
+CREATE TABLE `zf2_demo`.store_orders (
   id int NOT NULL AUTO_INCREMENT,
   store_product_id int NOT NULL,
   qty int NOT NULL,
@@ -198,7 +198,7 @@ git clone https://github.com/scorpion3dd/zf2_demo.git ./zf2_demo
 ~~~~~~
 4. Composer install
 ~~~~~~
-Composer install
+Composer install --ignore-platform-reqs
 ~~~~~~
 5. In the file /config/autoload/global.php, if necessary, change the parameters
 6. Set environment variables:
@@ -289,11 +289,11 @@ sudo systemctl restart nginx
 - /data/search_index
 - /data/uploads
 ~~~~~~
-sudo chmod -R 777 cache
-sudo chmod -R 777 logs
-sudo chmod -R 777 images
-sudo chmod -R 777 search_index
-sudo chmod -R 777 uploads
+chmod -R 777 ./data/cache
+chmod -R 777 ./data/logs
+chmod -R 777 ./data/images
+chmod -R 777 ./data/search_index
+chmod -R 777 ./data/uploads
 ~~~~~~
 
 DESCRIPTION OF WEB

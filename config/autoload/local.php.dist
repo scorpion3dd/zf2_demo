@@ -24,9 +24,9 @@
 return [
     'db' => [
         'driver'   => 'pdo_mysql',
-        'dsn'      => 'mysql:dbname=' . 'DB_NAME' . ';host=' . 'DB_HOST',
-        'username' => 'DB_USERNAME',
-        'password' => 'DB_PASSWORD',
+        'dsn'      => 'mysql:dbname=' . getenv('MYSQL_DATABASE') . ';host=' . getenv('MYSQL_HOST'),
+        'username' => getenv('MYSQL_USER'),
+        'password' => getenv('MYSQL_PASSWORD'),
         'driver_options' => [
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
         ],

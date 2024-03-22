@@ -11,6 +11,7 @@
 
 namespace Admin\Helpers;
 
+use Exception;
 use MongoDB\Driver\Manager;
 use Zend\Log\Formatter\Base;
 use Zend\Log\Logger;
@@ -47,7 +48,11 @@ class LoggerHelpers
             $logger->addWriter(self::prepearWriterFileAll());
             $logger->addWriter(self::prepearWriterFile());
             $logger->addWriter(self::prepearWriterDb($sm));
-            $logger->addWriter(self::prepearWriterMongo());
+            try {
+//                $logger->addWriter(self::prepearWriterMongo());
+            } catch (Exception $exception) {
+                echo $exception->getMessage();
+            }
         }
         Logger::registerErrorHandler($logger);
         Logger::registerExceptionHandler($logger);
@@ -99,6 +104,6 @@ class LoggerHelpers
     private static function prepearWriterMongo(): MongoDB
     {
         /** @phpstan-ignore-next-line */
-        return new MongoDB(new Manager(), 'zf2', 'logs', []);
+        return new MongoDB(new Manager(), getenv('MONGO_CONNECT_DB'), getenv('MONGO_CONNECT_COLLECTION'), []);
     }
 }
